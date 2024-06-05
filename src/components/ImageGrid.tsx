@@ -5,9 +5,9 @@ const ImageGrid = ({
   handleClick,
 }: {
   imageData: string;
+  handleClick: (idx: number) => void;
   squarePosition: { top: number; left: number };
   randomShapes: { isSelected: boolean; color: string; shape: string | null }[];
-  handleClick: (idx: number) => void;
 }) => {
   return (
     <div className="relative">
@@ -34,6 +34,7 @@ const ImageGrid = ({
             {el.shape ? (
               <span
                 className={`text-white text-3xl text-${el.color.toLowerCase()}-600`}
+                style={{}}
               >
                 {el.shape === "Triangle"
                   ? "▲"

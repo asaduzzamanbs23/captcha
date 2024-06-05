@@ -78,11 +78,10 @@ export default function App() {
     setImageData("");
     setIsPassed(false);
     setIsValidate(false);
-    setRandomShapes(generateInitialShapes());
-    setShapeToBeSelect(randomShapeGenerator(randomShapes));
-    setColorToBeSelect(
-      randomColorGenerator(randomShapes, shapeToBeSelect as string)
-    );
+    const shapes = generateInitialShapes();
+    setRandomShapes(shapes);
+    setShapeToBeSelect(randomShapeGenerator(shapes));
+    setColorToBeSelect(randomColorGenerator(shapes, shapeToBeSelect as string));
   };
 
   useEffect(() => {
