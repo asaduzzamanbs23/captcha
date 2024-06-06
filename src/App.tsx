@@ -105,16 +105,6 @@ export default function App() {
     return () => clearInterval(timer);
   }, [totalAttempt, isPassed]);
 
-  console.log(
-    "!(colorToBeSelect && shapeToBeSelect)",
-    !(colorToBeSelect && shapeToBeSelect)
-  );
-  console.log(
-    "colorToBeSelect , shapeToBeSelect)",
-    colorToBeSelect,
-    shapeToBeSelect
-  );
-
   return (
     <>
       <div className="bg-[#03285D] flex justify-center h-screen">
