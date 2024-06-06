@@ -75,13 +75,15 @@ export default function App() {
   };
 
   const handleReset = () => {
+    const shapes = generateInitialShapes();
+    const shape = randomShapeGenerator(shapes);
+    const color = randomColorGenerator(shapes, shape as string);
     setImageData("");
     setIsPassed(false);
     setIsValidate(false);
-    const shapes = generateInitialShapes();
     setRandomShapes(shapes);
-    setShapeToBeSelect(randomShapeGenerator(shapes));
-    setColorToBeSelect(randomColorGenerator(shapes, shapeToBeSelect as string));
+    setShapeToBeSelect(shape);
+    setColorToBeSelect(color);
   };
 
   useEffect(() => {
@@ -102,6 +104,16 @@ export default function App() {
 
     return () => clearInterval(timer);
   }, [totalAttempt, isPassed]);
+
+  console.log(
+    "!(colorToBeSelect && shapeToBeSelect)",
+    !(colorToBeSelect && shapeToBeSelect)
+  );
+  console.log(
+    "colorToBeSelect , shapeToBeSelect)",
+    colorToBeSelect,
+    shapeToBeSelect
+  );
 
   return (
     <>

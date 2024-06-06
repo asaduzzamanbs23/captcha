@@ -33,8 +33,8 @@ const ImageGrid = ({
           >
             {el.shape ? (
               <span
-                className={`text-white text-3xl text-${el.color.toLowerCase()}-600`}
-                style={{}}
+                className={`text-white text-3xl`}
+                style={{ color: el.color.toLowerCase() }}
               >
                 {el.shape === "Triangle"
                   ? "▲"
